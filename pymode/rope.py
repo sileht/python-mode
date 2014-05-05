@@ -29,6 +29,8 @@ def look_ropeproject(path):
     while True:
         if '.ropeproject' in os.listdir(p):
             return p
+        if '__init__.py' not in os.listdir(p):
+            return p
 
         new_p = os.path.abspath(os.path.join(p, ".."))
         if new_p == p:
